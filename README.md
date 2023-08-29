@@ -2,16 +2,19 @@
 
 This example is the implementation of the test task of calculating due date with a given start datetime and a duration. If the resulting time is outside of business hours or is on weekend, the calculation should act accordingly and skip to next business day.
 
+The solution contains an API and a CLI interface where you can try the functionality.
+
 ## Installation
 
 To install this project, follow these steps:
 
 - Clone the repository to your local machine.
-- Install the required dependencies by running npm install and composer install.
-- Start the development server by running ```php artisan serve```.
+- You can immediately use the CLI
+- In order to use the API, choose 1 of the following steps:
+	- Run as a container: `docker compose up -d`
+	- Run as local service: ```php artisan serve```
 
 ## Usage
-
 To use this project, follow these steps:
 
 ### Use the API
@@ -20,8 +23,9 @@ Run requests in the below format:
 ```
 localhost:8000/api/localhost:8000/api/due-date?submit_date=2023-08-28%2013:15&turnaround_time=35.7
 ```
+You can adjust the url according to your environment.
 
-### Use CLI
+### Use the CLI
 
 ```sh
 $ php artisan calculate:due-date "2023-08-28 13:15" 12
