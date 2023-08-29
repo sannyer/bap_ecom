@@ -5,8 +5,6 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Services\DueDateCalculatorService;
 use DateTime;
-use App\Exceptions\InvalidSubmitDateException;
-use App\Exceptions\InvalidTurnaroundTimeException;
 
 class CalculateDueDate extends Command
 {

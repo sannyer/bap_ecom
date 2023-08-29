@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Exceptions;
+
 /**
  * Exception for invalid submit date.
  */
