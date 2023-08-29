@@ -8,7 +8,8 @@ The solution contains an API and a CLI interface where you can try the functiona
 
 To install this project, follow these steps:
 
-- Clone the repository to your local machine.
+- Clone the repository to your local machine
+- Install the required dependencies by running and composer install
 - You can immediately use the CLI
 - In order to use the API, choose 1 of the following steps:
 	- Run as a container: `docker compose up -d`
