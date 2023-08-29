@@ -5,6 +5,9 @@ namespace Tests\Unit;
 use App\Services\DueDateCalculatorService;
 use DateTime;
 use PHPUnit\Framework\TestCase;
+// use App\Exceptions\InvalidSubmitDateException;
+// use App\Exceptions\InvalidTurnaroundTimeException;
+
 
 class DueDateCalculatorServiceTest extends TestCase
 {
@@ -48,17 +51,17 @@ class DueDateCalculatorServiceTest extends TestCase
     
         // Test invalid input with negative turnaround time
         $submitDate = new DateTime('2023-08-28 13:15');
-        $this->expectException(\App\Services\InvalidTurnaroundTimeException::class);
+        $this->expectException(\App\Exceptions\InvalidTurnaroundTimeException::class);
         $calculator->calculateDueDate($submitDate, -1);
     
         // Test invalid input with zero turnaround time
         $submitDate = new DateTime('2023-08-28 13:15');
-        $this->expectException(\App\Services\InvalidTurnaroundTimeException::class);
+        $this->expectException(\App\Exceptions\InvalidTurnaroundTimeException::class);
         $calculator->calculateDueDate($submitDate, 0);
     
         // Test invalid input with non-numeric turnaround time
         $submitDate = new DateTime('2023-08-28 13:15');
-        $this->expectException(\App\Services\InvalidTurnaroundTimeException::class);
+        $this->expectException(\App\Exceptions\InvalidTurnaroundTimeException::class);
         $calculator->calculateDueDate($submitDate, 'asd');
     }
 }

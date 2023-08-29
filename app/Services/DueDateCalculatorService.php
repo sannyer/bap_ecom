@@ -4,6 +4,8 @@ namespace App\Services;
 
 use DateTime;
 use DateInterval;
+use App\Exceptions\InvalidSubmitDateException;
+use App\Exceptions\InvalidTurnaroundTimeException;
 
 /**
  * Class DueDateCalculatorService
@@ -123,18 +125,4 @@ class DueDateCalculatorService
         $date->setTime($date->format('H'), $date->format('i'), 0);
         return $date;
     }
-}
-
-/**
- * Exception for invalid submit date.
- */
-class InvalidSubmitDateException extends \Exception
-{
-}
-
-/**
- * Exception for invalid turnaround time.
- */
-class InvalidTurnaroundTimeException extends \Exception
-{
 }
